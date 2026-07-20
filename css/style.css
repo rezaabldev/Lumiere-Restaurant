@@ -35,6 +35,11 @@ h1,
 
     padding: 0 80px;
 
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(17, 17, 17, 0.9);
+    z-index: 1000;
 }
 
 
@@ -59,6 +64,7 @@ h1,
 .navbar a:hover {
 
     color: #c9a227;
+    transition: 0.3s;
 }
 
 
@@ -129,6 +135,8 @@ h1,
     border-radius: 5px;
 
     font-size: 18px;
+
+    transition: 0.3s;
 
 }
 
@@ -287,3 +295,224 @@ h1,
     margin-bottom: 20px;
 
 }
+
+
+
+.reservation {
+
+    min-height: 600px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background-color: #111;
+
+}
+
+
+.reservation-form {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 20px;
+
+    width: 400px;
+
+    margin: 0 auto;
+
+    padding: 40px;
+
+    border-radius: 15px;
+
+}
+
+
+input:focus {
+
+    outline: none;
+
+    border-color: #c9a227;
+
+}
+
+
+.reservation-form input {
+
+    padding: 15px;
+
+    background-color: #222;
+
+    border: 1px solid #444;
+
+    color: white;
+
+    font-size: 16px;
+
+    border-radius: 5px;
+
+}
+
+
+
+.reservation-form input:focus {
+
+    outline: none;
+
+    border-color: #c9a227;
+
+}
+
+
+
+.reservation-form button {
+
+    padding: 16px;
+
+    background-color: #c9a227;
+
+    color: #ffffff;
+
+    border: none;
+
+    font-size: 17px;
+
+    cursor: pointer;
+
+    border-radius: 8px;
+
+    font-weight: 600;
+
+    transition: background-color 0.4s ease,
+                box-shadow 0.4s ease,
+                transform 0.4s ease;
+
+
+
+}
+
+
+.reservation-form button:hover {
+
+    background-color: #ddb533;
+
+    box-shadow: 0 8px 20px rgba(201, 162, 39, 0.35);
+
+
+}
+
+
+.reservation-container {
+
+    width: 450px;
+
+    padding: 45px;
+
+    background-color: #1c1c1c;
+
+    border-radius: 15px;
+
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+
+}
+
+
+.reservation-container h2 {
+
+    text-align: center;
+
+    font-size: 40px;
+
+    margin-bottom: 35px;
+
+}
+
+
+@media (max-width: 768px) {
+
+
+    .navbar {
+
+        display: none;
+
+    }
+
+
+    .menu-toggle {
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 6px;
+
+        cursor: pointer;
+
+    }
+
+
+    .menu-toggle span {
+
+        width: 30px;
+
+        height: 3px;
+
+        background-color: white;
+
+        transition: 0.3s;
+
+        transform-origin: center;
+
+    }
+
+
+    .navbar.active {
+
+        display: flex;
+    
+        flex-direction: column;
+    
+        position: absolute;
+    
+        top: 80px;
+    
+        right: 0;
+    
+        width: 100%;
+    
+        background-color: rgba(17, 17, 17, 0.95);
+    
+        padding: 30px;
+    
+        gap: 25px;
+    
+    }
+
+    .menu-toggle.active span:nth-child(1) {
+
+        transform: rotate(45deg) translate(6px, 6px);
+    
+    }
+    
+    
+    .menu-toggle.active span:nth-child(2) {
+    
+        opacity: 0;
+    
+    }
+    
+    
+    .menu-toggle.active span:nth-child(3) {
+
+        transform: rotate(-45deg) translate(6px, -6px);
+    
+    }
+
+}
+
