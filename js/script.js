@@ -102,3 +102,105 @@ window.addEventListener("scroll", () => {
 
 });
 
+
+let currentImage = 0
+
+
+const galleryImages = document.querySelectorAll(".gallery-item img"); 
+
+const lightbox = document.querySelector(".lightbox");
+
+const lightboxImage = document.querySelector(".lightbox-image");
+
+const closeBtn = document.querySelector(".close");
+
+
+galleryImages.forEach((image,index)=>{
+
+    image.addEventListener("click",(e)=>{
+
+        currentImage = index;
+
+        lightbox.classList.add("active");
+
+        document.body.style.overflow = "hidden";
+
+        lightboxImage.src = image.src;
+
+    });
+
+});
+
+
+closeBtn.addEventListener("click",()=>{
+
+
+    lightbox.classList.remove("active");
+
+    document.body.style.overflow = "auto";
+
+});
+
+lightbox.addEventListener("click",(e)=>{
+
+
+    if(e.target === lightbox){
+
+        lightbox.classList.remove("active");
+
+        document.body.style.overflow = "auto";
+
+    }
+
+
+});
+
+document.addEventListener("keydown",(e)=>{
+
+
+    if(e.key === "Escape"){
+
+        lightbox.classList.remove("active");
+
+        document.body.style.overflow = "auto";
+
+    }
+
+
+});
+
+
+document.addEventListener("keydown", (e) => {
+
+    if (!lightbox.classList.contains("active")) return;
+
+    if (e.key === "ArrowRight") {
+
+        currentImage++;
+
+        if (currentImage >= galleryImages.length) {
+
+            currentImage = 0;
+
+        }
+
+        lightboxImage.src = galleryImages[currentImage].src;
+
+    }
+
+    if (e.key === "ArrowLeft") {
+
+        currentImage--;
+
+        if (currentImage < 0) {
+
+            currentImage = galleryImages.length - 1;
+
+        }
+
+        lightboxImage.src = galleryImages[currentImage].src;
+
+    }
+
+});
+
