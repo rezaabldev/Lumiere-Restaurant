@@ -7,6 +7,16 @@
 
     <title>Lumiere Restaurant</title>
 
+    <meta name="description" content="Lumiere Restaurant offers a modern fine dining experience in Berlin with elegant cuisine and unforgettable atmosphere.">
+
+    <meta name="keywords" content="Restaurant, Fine Dining, Berlin, European Cuisine, Lumiere">
+
+    <meta name="author" content="Reza Aboali">
+
+    <meta name="theme-color" content="#111111">
+
+    <link rel="icon" href="images/favicon.png">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,6 +28,12 @@
 
 
 <body>
+
+    <div class="loader">
+
+        <div class="spinner"></div>
+    
+    </div>
 
     <header class="header">
 
@@ -36,9 +52,10 @@
     
         </nav>
 
-        <div class="menu-toggle"><span></span>
-                                 <span></span>
-                                 <span></span>
+        <button class="menu-toggle" aria-label="Open menu">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
     
     
@@ -195,7 +212,7 @@
 
          <h2>Reserve Your Table</h2>
     
-         <form class="reservation-form">
+         <form class="reservation-form" id="reservationForm">
     
             <input type="text" placeholder="Your Name">
     
@@ -301,6 +318,12 @@
         <img class="lightbox-image" src="" alt="Gallery Image">
     
     </div>
+
+    <button class="back-to-top" aria aria-label="Back to top">
+
+           ↑
+        
+     </button>
 
     <script src="js/script.js"></script>
 

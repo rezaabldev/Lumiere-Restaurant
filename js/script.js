@@ -204,3 +204,93 @@ document.addEventListener("keydown", (e) => {
 
 });
 
+
+const backToTop = document.querySelector(".back-to-top");
+
+
+window.addEventListener("scroll",()=>{
+
+
+    if(window.scrollY > 500){
+
+        backToTop.classList.add("show");
+
+    }else{
+
+        backToTop.classList.remove("show");
+
+    }
+
+});
+
+
+backToTop.addEventListener("click",()=>{
+
+    window.scrollTo({
+
+        top:0,
+
+        behavior:"smooth"
+
+    });
+
+});
+
+const loader = document.querySelector(".loader");
+
+window.addEventListener("load", () => {
+
+    loader.classList.add("hidden");
+
+});
+
+const reservationForm = document.querySelector("#reservationForm");
+
+reservationForm.addEventListener("submit", (e) => {
+
+    e.preventDefault();
+
+    const inputs = reservationForm.querySelectorAll("input");
+
+    let isValid = true;
+
+    inputs.forEach((input) => {
+
+        if (input.value.trim() === "") {
+
+            isValid = false;
+
+        }
+
+    });
+
+    if (isValid) {
+
+        const submitButton = reservationForm.querySelector("button");
+    
+        submitButton.disabled = true;
+    
+        submitButton.textContent = "Sending...";
+    
+        setTimeout(() => {
+    
+            alert("Your reservation request has been sent successfully!");
+    
+            reservationForm.reset();
+    
+            submitButton.disabled = false;
+    
+            submitButton.textContent = "Book Now";
+    
+        }, 1000);
+    
+    } 
+    
+    else {
+
+        alert("Please fill in all fields.");
+
+    }
+
+});
+
